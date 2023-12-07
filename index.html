@@ -10,8 +10,27 @@
     <button onclick="(()=>{alert('You clicked the button congrats')})()">
       Click me
     </button>
-    <form>
-      <button value="amazing">amazing</button>
+    <form id="myForm">
+      <button type="button" onclick="submitForm('amazing')">amazing</button>
     </form>
+
+    <script>
+      function submitForm(buttonValue) {
+        // Print the button value
+        console.log(buttonValue);
+
+        // You can use the Python requests library to send a POST request with the button value
+        // Example Python code:
+        // import requests
+        // url = 'your_server_url'
+        // data = {'button_value': buttonValue}
+        // response = requests.post(url, data=data)
+      }
+      
+      // Prevent the default form submission behavior
+      document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+      });
+    </script>
   </body>
 </html>
