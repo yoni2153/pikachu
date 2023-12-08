@@ -7,8 +7,13 @@
   </head>
   <body>
     <h1>My Website</h1>
-    <button onclick="(()=>{alert('You clicked the button congrats')})()">
-      Click me
-    </button>
+    <button onclick="addingData()">add data</button>
+    <script>
+      function addingData() {
+        const pargraph = document.createElement("p");
+        pargraph.textContent = "i am amazing";
+        console.log(pargraph);
+      }
+    </script>
   </body>
 </html>
