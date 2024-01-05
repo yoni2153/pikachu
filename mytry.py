@@ -4,35 +4,35 @@ def print_board(board):
         print(row)
 
 
-def possible_positions(board, num):
-    # finding the empty positions
-    empty_positions = find_empty_postions(board)
-    # num on board
-    for i in range(4):
-        for j in range(4):
-            if board[i][j] == num:
-                # find the possible positions
-                new_row, new_col = 2*(i//2), 2*(j//2)
-                blocked_grids = []
-                for i_row in range(2):
-                    for i_col in range(2):
-                        blocked_grid = new_row + i_row, new_col + i_col
-                        blocked_grids.append(blocked_grid)
+# def possible_positions(board, num):
+#     # finding the empty positions
+#     empty_positions = find_empty_postions(board)
+#     # num on board
+#     for i in range(4):
+#         for j in range(4):
+#             if board[i][j] == num:
+#                 # find the possible positions
+#                 new_row, new_col = 2*(i//2), 2*(j//2)
+#                 blocked_grids = []
+#                 for i_row in range(2):
+#                     for i_col in range(2):
+#                         blocked_grid = new_row + i_row, new_col + i_col
+#                         blocked_grids.append(blocked_grid)
 
-                blocked_row = [(i, index) for index in range(2, 4)]
-                blocked_col = [(index, j) for index in range(2, 4)]
-                blocked_positions = blocked_grids + blocked_row + blocked_col
-    for value in blocked_positions:
-        for row in empty_places:
-            if value in row:
-                row.remove(value)
-            if row == []:
-                empty_places.remove(row)
-            if len(row) == 1 and row[0] not in blocked_positions:
-                num_row, num_col = row[0]
-                board[num_row][num_col] = num
-    possible_positions(board, num)
-    return print_board(puzzle)
+#                 blocked_row = [(i, index) for index in range(2, 4)]
+#                 blocked_col = [(index, j) for index in range(2, 4)]
+#                 blocked_positions = blocked_grids + blocked_row + blocked_col
+#     for value in blocked_positions:
+#         for row in empty_places:
+#             if value in row:
+#                 row.remove(value)
+#             if row == []:
+#                 empty_places.remove(row)
+#             if len(row) == 1 and row[0] not in blocked_positions:
+#                 num_row, num_col = row[0]
+#                 board[num_row][num_col] = num
+#     possible_positions(board, num)
+#     return print_board(puzzle)
 
 
 # def solve(board):
